@@ -11,6 +11,10 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
+@app.route ('/potencia', methods=['GET','POST'])
+@app.route('/potencia/base/exponente', methods=['GET','POST'])
+def potencia(base=0,exponente=0):
+
 ## Debug ##
 
 app.run('0.0.0.0',debug=True)
