@@ -19,7 +19,7 @@ def potencia(base=0,exponente=0,resultado='no definido'):
     elif exponente == 0 and base >=1:
         resultado = 1
     elif exponente < 0:
-        resultado = 1/base**(exponente*-1)
+        resultado = 1/base**exponente
     return render_template("potencia.html", b=base,e=exponente,r=resultado)
 
 ## Debug ##
