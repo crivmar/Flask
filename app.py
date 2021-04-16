@@ -22,8 +22,8 @@ def potencia(base=0,exponente=0,resultado='no definido'):
         resultado = 1/base**exponente
     return render_template("potencia.html", b=base,e=exponente,r=resultado)
 
-@app.route ('/cuenta',methods=['GET','POST'])
-@app route ('/cuenta/<palabra>/<letra>',methods=['GET','POST'])
+@app.route ('/cuenta', methods=['GET','POST'])
+@app.route ('/cuenta/<palabra>/<letra>', methods=['GET','POST'])
 def cuenta(palabra='@', letra="@",resultado='@'):
     if len(letra) ==1:
         resultado= palabra.count(letra)
