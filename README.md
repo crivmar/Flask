@@ -1,2 +1,4 @@
 # Flask
-Ejercicios y ejemplos de Flask, para MARCA
+Repositorio para primera tarea de MARCA con FLASK.
+
+
