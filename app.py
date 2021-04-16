@@ -24,7 +24,12 @@ def potencia(base=0,exponente=0,resultado='no definido'):
 
 @app.route ('/cuenta',methods=['GET','POST'])
 @app route ('/cuenta/<palabra>/<letra>',methods=['GET','POST'])
-
+def cuenta(palabra='@', letra="@",resultado='@'):
+    if len(letra) ==1:
+        resultado= palabra.count(letra)
+    else:
+        abort(404)
+    return render_template ("cuenta.html",p=palabra,l=letra,r=resultado)
 
 ## Debug ##
 
