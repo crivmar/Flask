@@ -24,9 +24,8 @@ def potencia(base,exponente):
         abort(404)
     return render_template("potencia.html", b=base,e=exponente,r=resultado)
 
-@app.route ('/cuenta', methods=['GET','POST'])
 @app.route ('/cuenta/<palabra>/<letra>', methods=['GET','POST'])
-def cuenta(palabra='@', letra="@",resultado='@'):
+def cuenta(palabra,letra):
     if len(letra) ==1:
         resultado= palabra.count(letra)
     else:
