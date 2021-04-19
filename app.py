@@ -34,11 +34,8 @@ def cuenta(palabra='@', letra="@",resultado='@'):
 
 @app.route('/libro', methods=['GET','POST'])
 @app.route('/libro/<int:codigo>', methods=['GET','POST'])
-def libro(condigo=0,libro="Ninguno",autor="Ninguno")
-    datos=etree.parse(./libros.xml)
-    if codigo in datos.xpath('//libro/codigo/text()'):
-        codigo= codigo
-        libro= datos.xpath('biblioteca/[]')
+def libro(condigo=0,libro="Ninguno",autor="Ninguno"):
+
 
 
 
