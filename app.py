@@ -32,16 +32,16 @@ def cuenta(palabra='@', letra="@",resultado='@'):
         abort(404)
     return render_template ("cuenta.html",p=palabra,l=letra,r=resultado)
 
-@app.route('/libro/<int:codigo>', methods=['GET','POST'])
+@app.route('/libro/<codigo>', methods=['GET','POST'])
 def libro(codigo):
-    with open('./libros.xml') as f:
+    with open("libros.xml") as f:
         datos=etree.parse(f)
     if codigo in datos.xpath('//libro/codigo/text()'):
-        libro=datos.xpath('//libro[codigo[contains(text(),"%i")]]/titulo/text()'%codigo)
-        autor=datos.xpath('//libro[codigo[contains(text(),"%i")]]/autor/text()'%codigo)
+        libro=datos.xpath('//libro[codigo="%s"]/titulo/text()'%codigo)[0]
+        autor=datos.xpath('//libro[codigo="%s"]/autor/text()'%codigo)[0]
     else:
         abort(404)
-    return render_template ("/libro.html", c=codigo,l=libro,a=autor)
+    return render_template ("libro.html", c=codigo,l=libro,a=autor)
 
 
 ## Debug ##
