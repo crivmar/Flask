@@ -32,6 +32,9 @@ def cuenta(palabra='@', letra="@",resultado='@'):
         abort(404)
     return render_template ("cuenta.html",p=palabra,l=letra,r=resultado)
 
+@app.route('/libro', methods=['GET','POST'])
+@app.route('/libro/<int:codigo>', methods=['GET','POST'])
+
 ## Debug ##
 
 app.run('0.0.0.0',debug=True)
