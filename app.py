@@ -11,9 +11,8 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-@app.route ('/potencia', methods=['GET','POST'])
 @app.route('/potencia/<int:base>/<exponente>', methods=['GET','POST'])
-def potencia(base=0,exponente=0,resultado='no definido'):
+def potencia(base,exponente):
     exponente2=int(exponente)
     if exponente2 >= 1:
         resultado = base**exponente2
@@ -21,6 +20,8 @@ def potencia(base=0,exponente=0,resultado='no definido'):
         resultado = 1
     elif exponente2 < 0:
         resultado = 1/base**(-exponente2)
+    else:
+        abort(404)
     return render_template("potencia.html", b=base,e=exponente,r=resultado)
 
 @app.route ('/cuenta', methods=['GET','POST'])
