@@ -12,14 +12,15 @@ def index():
     return render_template("index.html")
 
 @app.route ('/potencia', methods=['GET','POST'])
-@app.route('/potencia/<int:base>/<int:exponente>', methods=['GET','POST'])
+@app.route('/potencia/<int:base>/<exponente>', methods=['GET','POST'])
 def potencia(base=0,exponente=0,resultado='no definido'):
-    if exponente >= 1:
-        resultado = base**exponente
-    elif exponente == 0 and base >=1:
+    exponente2=int(exponente)
+    if exponente2 >= 1:
+        resultado = base**exponente2
+    elif exponente2 == 0 and base >=1:
         resultado = 1
-    elif exponente < 0:
-        resultado = 1/base**exponente
+    elif exponente2 < 0:
+        resultado = 1/base**(-exponente2)
     return render_template("potencia.html", b=base,e=exponente,r=resultado)
 
 @app.route ('/cuenta', methods=['GET','POST'])
