@@ -34,6 +34,8 @@ def cuenta(palabra='@', letra="@",resultado='@'):
 
 @app.route('/libro', methods=['GET','POST'])
 @app.route('/libro/<int:codigo>', methods=['GET','POST'])
+def libro(condigo=0,libro="Ninguno",autor="Ninguno")
+    
 
 ## Debug ##
 
